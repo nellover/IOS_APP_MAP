@@ -1,21 +1,25 @@
-//
-//  ContentView.swift
-//  testapp
-//
-//  Created by Orangeodc10 on 23/12/2024.
-//
-
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State private var textColor = Color.black
+    
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+            Text("color is :")
+            //Text( "$\(textColor)")
+                .foregroundColor(textColor)
+            Button("change color "){
+                if(textColor == .red)
+                {
+                    textColor = .pink
+                }
+                else {
+                    textColor = .red
+                }
+                
+            }
         }
-        .padding()
     }
 }
 
